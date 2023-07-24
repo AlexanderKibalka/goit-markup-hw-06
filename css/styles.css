@@ -89,8 +89,6 @@ img {
     padding-top: 60px;
     padding-bottom: 60px;
   }
-   {
-  }
 }
 
 /* Base style for small devices*/
@@ -179,12 +177,26 @@ img {
     display: none;
   }
 }
+
 .header-nav-link {
   display: block;
   padding: 24px 0;
   position: relative;
   transition: color var(--anim);
 }
+
+@media only screen and (min-width: 768px) {
+  .header-nav-link {
+    color: var(--title-cl);
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.32px;
+  }
+}
+
 .header-nav-link.active {
   color: #404bbf;
 }
@@ -210,9 +222,22 @@ img {
   transition: color var(--anim);
 }
 
+@media only screen and (min-width: 768px) {
+  .header-contact {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
 @media only screen and (max-width: 767px) {
   .header-contact {
     display: none;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .header-contact {
+    flex-direction: row;
   }
 }
 
@@ -222,6 +247,23 @@ img {
 }
 .header-contact-item {
   padding: 24px 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .header-contact-item {
+    padding: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .header-contact-link {
+    font-family: Roboto;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5px;
+    letter-spacing: 0.32px;
+  }
 }
 
 /* hero styles */
@@ -277,13 +319,22 @@ img {
   .features-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 0 24px;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .features-item {
     flex-basis: calc((100% - 24px) / 2);
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .features-item {
+    flex-basis: calc(
+      (100% - var(--indent-vertical) * (var(--items) - 1)) / var(--items)
+    );
+    margin-bottom: 0px;
   }
 }
 
@@ -294,12 +345,16 @@ img {
 }
 
 @media only screen and (min-width: 1158px) {
-  .features-list {
-    display: flex;
-  }
   .features {
     padding-top: 120px;
   }
+}
+@media only screen and (max-width: 1157px) {
+  .features-icon-form {
+    display: none;
+  }
+}
+@media only screen and (min-width: 1158px) {
   .features-icon-form {
     display: flex;
     justify-content: center;
@@ -308,18 +363,52 @@ img {
     height: 112px;
     margin-bottom: 8px;
     border-radius: 4px;
-    background: var(--cloud, #f4f4fd);
+    background: var(--cloud-cl);
   }
+}
+
+.features-subtitle {
+  color: var(--title-cl);
+  text-align: center;
+  font-family: Roboto;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.11;
+  letter-spacing: 0.72px;
+  text-transform: capitalize;
+  margin-bottom: 8px;
+}
+
+@media only screen and (min-width: 768px) {
+  .features-subtitle {
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width: 1158px) {
   .features-subtitle {
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: 0.02em;
-    color: var(--title-cl);
   }
 }
 
+.features-text {
+  color: var(--main-dark-cl);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.32px;
+}
+
 /* activity styles */
+@media only screen and (max-width: 1157px) {
+  .activity {
+    display: none;
+  }
+}
 .activity {
   padding-bottom: 120px;
 }
@@ -332,6 +421,9 @@ img {
   margin-bottom: 72px;
 }
 .activity-list {
+  display: flex;
+  align-items: center;
+  gap: 24px;
   --items: 3;
 }
 
@@ -906,6 +998,9 @@ img {
   background-color: var(--main-white-cl);
   z-index: 999;
 
+  display: flex;
+  flex-direction: column;
+
   transform: translateX(100%);
   transition: transform 250ms ease-in-out;
 }
@@ -921,6 +1016,7 @@ img {
 }
 
 .mobile-menu {
+  margin-bottom: auto;
 }
 .mobile-menu-item {
 }
@@ -946,6 +1042,7 @@ img {
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0.4px;
+  margin-bottom: 48px;
 }
 .adress {
 }
@@ -955,13 +1052,16 @@ img {
   margin-bottom: 40px;
 }
 .blue-size {
+  min-width: 353px;
+  font-family: Roboto;
   font-size: 36px;
   font-style: normal;
   font-weight: 700;
-  line-height: 40px; /* 111.111% */
+  line-height: 1.11;
   letter-spacing: 0.72px;
   text-transform: capitalize;
   color: var(--bt-hover-cl);
+  margin-bottom: 40px;
 }
 .mobile-list-elips {
   display: flex;
