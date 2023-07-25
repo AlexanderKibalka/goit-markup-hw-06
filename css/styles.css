@@ -273,8 +273,6 @@ img {
   margin: 0 auto;
   padding-top: 112px;
   padding-bottom: 112px;
-  /* padding-top: 188px;
-  padding-bottom: 188px; */
   background-position: center;
   background-color: var(--title-cl);
   background-repeat: no-repeat;
@@ -339,6 +337,13 @@ img {
         ),
         url(../images/hw-01/hero-bg_@2x.jpg);
     }
+  }
+}
+
+@media only screen and (min-width: 1158px) {
+  .hero {
+    padding-top: 188px;
+    padding-bottom: 188px;
   }
 }
 
